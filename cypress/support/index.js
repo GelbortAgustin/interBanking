@@ -1,3 +1,3 @@
 afterEach(() => {
-    cy.screenshot();
+    cy.screenshot(); // para capturar una imagen después de cada prueba
 });
