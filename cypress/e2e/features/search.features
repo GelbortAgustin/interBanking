@@ -1,0 +1,15 @@
+Feature: Búsqueda de iPhone 13 en Mercado Libre
+
+  Scenario: Buscar un iPhone 13 con almacenamiento
+    Given que estoy en la página principal de Mercado Libre
+    When busco "iPhone 13 128GB"
+    Then debería ver resultados que incluyan "iPhone 13"
+
+  Scenario: Búsqueda sin resultados
+    Given que estoy en la página principal de Mercado Libre
+    When busco "iPhone 13 marca inexistente123"
+    Then debería ver un mensaje de "no se encontraron resultados"
+
+  Scenario: Verificación por API
+    Given que hago una búsqueda vía API por "iPhone 13"
+    Then los resultados deberían contener al menos un producto con "iPhone"
